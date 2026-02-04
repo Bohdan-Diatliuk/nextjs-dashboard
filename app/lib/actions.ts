@@ -35,7 +35,7 @@ export type State = {
 }
 
 export async function createInvoice(prevState: State, formData: FormData) {
-    const validatedFields = CreateInvoice.parse({
+    const validatedFields = CreateInvoice.safeParse({
     customerId: formData.get('customerId'),
         amount: formData.get('amount'),
         status: formData.get('status'),
